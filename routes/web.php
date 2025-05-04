@@ -22,7 +22,7 @@ use App\Http\Controllers\ProdukController;
 
 Route::get('/', function () {
     // return view('welcome');
-    return redirect()->route('backend.login');
+    return redirect()->route('beranda');
 });
 Route::get('backend/beranda', [BerandaController::class, 'berandaBackend'])->name('backend.beranda');
 Route::get('backend/login', [LoginController::class, 'loginBackend'])->name('backend.login');
@@ -45,3 +45,5 @@ Route::post('backend/laporan/cetakuser', [UserController::class, 'cetakUser'])->
 Route::get('backend/laporan/formproduk', [ProdukController::class, 'formProduk'])->name('backend.laporan.formproduk')->middleware('auth');
 Route::post('backend/laporan/cetakproduk', [ProdukController::class, 'cetakProduk'])->name('backend.laporan.cetakproduk')->middleware('auth');
 
+// frontend
+Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda'); 

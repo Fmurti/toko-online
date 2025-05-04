@@ -72,7 +72,7 @@ class ProdukController extends Controller
             // Simpan nama file asli di database
             $validatedData['foto'] = $originalFileName;
         }
-        Produk::create($validatedData, $messages);
+        Produk::create($validatedData,$messages);
         return redirect()->route('backend.produk.index')->with('success', 'Data berhasil tersimpan');
     }
     /**
